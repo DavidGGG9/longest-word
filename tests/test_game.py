@@ -69,4 +69,4 @@ class TestGame:
         test_word = 'FEUN'
 
         #verify
-        assert game.is_valid(test_word) is False
+        assert Game._Game__check_dictionary(test_word) is False
