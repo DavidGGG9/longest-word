@@ -58,3 +58,15 @@ class TestGame:
 
         #teardown
         assert game.grid == list(test_grid) # Make sure the grid remained untouched
+
+    def test_unknown_word_is_invalid(self):
+        """A word that is not in the English dictionary should not be valid"""
+
+        #setup
+        game = Game()
+
+        game.grid = list('KWIENFUQW') #forces the grid to a new test case
+        test_word = 'FEUN'
+
+        #verify
+        assert Game._Game__check_dictionary(test_word) is False
